@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     openweather_api_key: str = ""
     openweather_city: str = "Madrid"
 
+    database_url: str = ""
+
     class Config:
         env_file = ".env"
 
