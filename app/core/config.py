@@ -5,6 +5,9 @@ class Settings(BaseSettings):
     app_version: str = "0.1.0"
     debug: bool = True
 
+    openweather_api_key: str = ""
+    openweather_city: str = "Madrid"
+
     class Config:
         env_file = ".env"
 
