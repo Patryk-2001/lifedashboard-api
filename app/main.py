@@ -5,6 +5,7 @@ from app.api.weather import router as weather_router
 from app.api.finance import router as finance_router
 from app.api.habits import router as habits_router
 from app.api.expenses import router as expenses_router
+from app.api.auth import router as auth_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -14,6 +15,7 @@ app = FastAPI(
     debug=settings.debug
 )
 
+app.include_router(auth_router)
 app.include_router(weather_router)
 app.include_router(finance_router)
 app.include_router(habits_router)
