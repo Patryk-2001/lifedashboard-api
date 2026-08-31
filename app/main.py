@@ -4,6 +4,7 @@ from app.core.database import Base, engine
 from app.api.weather import router as weather_router
 from app.api.finance import router as finance_router
 from app.api.habits import router as habits_router
+from app.api.expenses import router as expenses_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -16,6 +17,7 @@ app = FastAPI(
 app.include_router(weather_router)
 app.include_router(finance_router)
 app.include_router(habits_router)
+app.include_router(expenses_router)
 
 @app.get("/health")
 def health():
